@@ -1,0 +1,265 @@
+$dark: #222222;
+$mid: #3B3B3B;
+$lightMid: #BABABA;
+$light: #D9D9D9;
+
+.container {
+  background: $dark;
+  height: 100vh;
+  width: 100vw;
+
+  &>.header {
+    padding: 1vw;
+
+    &>h3 {
+      color: $lightMid;
+      font-size: 24px;
+      margin: 1vw;
+    }
+  }
+
+  &Input {
+    display: flex;
+    padding: 2vw;
+    justify-content: space-between;
+
+    &>div {
+      text-align: center;
+
+      &>.inputBox {
+        outline: none;
+        background-color: $lightMid;
+        border: none;
+        color: $mid;
+        padding: 0.6vw;
+        width: 25vw;
+        font-size: 20px;
+        border-radius: 3px;
+      }
+
+      &>.addBtn {
+        outline: none;
+        background-color: $lightMid;
+        border: none;
+        color: $mid;
+        padding: 0.6vw;
+        width: 25vw;
+        font-size: 20px;
+        border-radius: 3px;
+        background-color: $mid;
+        color: $light;
+        font-weight: bolder;
+        transition: all 0.2s;
+
+        &:hover,
+        &:active {
+          background: #4d4c4c;
+        }
+      }
+
+      &>.errorTxt {
+        font-weight: 500;
+        font-size: 20px;
+        color: rgb(190, 1, 1);
+      }
+    }
+  }
+
+  &ProductList {
+    margin: 2vw;
+    height: 63vh;
+    background-color: $lightMid;
+    border-radius: 5px;
+    overflow: auto;
+
+    &>.productTable {
+      padding: 2vw;
+      width: 100%;
+
+      th {
+        padding-bottom: 1vw;
+        font-size: 20px;
+        font-weight: bolder;
+        color: $dark;
+        border-bottom: 3px solid $mid;
+      }
+
+      th:nth-child(2) {
+        width: 40vw;
+      }
+
+      th:nth-child(3) {
+        width: 20vw;
+      }
+    }
+
+    tbody {
+      position: relative;
+      top: 1vh;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+
+      .actionBtn {
+        display: flex;
+        justify-content: center;
+        padding: 5px 0px;
+
+        &>button {
+          font-size: 18px;
+          background: $dark;
+          color: $light;
+          border: none;
+          border-radius: 3px;
+          padding: 0.5vw 1vw;
+          transition: all 0.2s;
+
+          &>fa-icon {
+            margin-right: 5px;
+          }
+
+          &:hover,
+          &:active {
+            background: #4d4c4c;
+          }
+        }
+
+        button:nth-child(1) {
+          color: $dark;
+          background-color: $light;
+          margin-right: 1vw;
+
+          &:hover,
+          &:active {
+            background: #838383;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 796px) {
+  .container {
+    &>.header {
+      &>h3 {
+        font-size: 20px;
+      }
+    }
+
+    &Input {
+      &>div {
+        &>.inputBox {
+          font-size: 18px;
+        }
+
+        &>.addBtn {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &ProductList {
+      &>.productTable {
+        th {
+          font-size: 18px;
+        }
+      }
+
+      tbody {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    height: 100vh;
+
+    &>.header {
+      &>h3 {
+        font-size: 24px;
+      }
+    }
+
+    &Input {
+      margin: 5vh 0vh;
+      display: block;
+      text-align: center;
+      height: 26vh;
+
+      &>div {
+        &>.inputBox {
+          width: 60vw;
+          margin: 5px;
+          font-size: 18px;
+          padding: 1vh;
+        }
+
+        &>.errorTxt {
+          font-size: 14px;
+        }
+
+        &>.addBtn {
+          width: 63.5vw;
+          margin: 10px;
+          font-size: 20px;
+          padding: 1vh;
+        }
+      }
+    }
+
+    &ProductList {
+      height: 51vh;
+      overflow: auto;
+      padding-bottom: 2vw;
+
+      &>.productTable {
+        &>thead {
+          display: none;
+        }
+
+        &>tbody {
+          &>tr {
+            display: block;
+            background: $mid;
+            text-align: left;
+            padding: 1vw;
+            margin-bottom: 1vh;
+            border-radius: 5px;
+
+            &>td {
+              color: $light;
+              font-size: 18px;
+              margin: 10px 0px 5px 10px;
+              display: block;
+              width: 96%;
+            }
+
+            &>td:nth-child(2) {
+              width: 70%;
+              display: inline-flex;
+            }
+
+            &>td:nth-child(3) {
+              width: 20%;
+              display: inline-flex;
+            }
+
+            &>.actionBtn {
+              width: 96%;
+              text-align: right;
+
+              &>button {
+                font-size: 20px;
+                padding: 0.8vw 2vw;
+                margin-right: 2vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

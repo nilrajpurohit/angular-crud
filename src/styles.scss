@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+$dark: #222222;
+$mid: #3B3B3B;
+$lightMid: #BABABA;
+$light: #D9D9D9;
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: Agency FB;
+}
+
+.border {
+  height: 0.4vh;
+  width: 50vw;
+  background-color: $lightMid;
+}

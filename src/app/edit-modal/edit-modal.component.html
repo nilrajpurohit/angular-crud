@@ -1,0 +1,25 @@
+<div class="bgBlur" *ngIf=isShow (click)="toggleModal()"></div>
+<div class="editContainer" *ngIf=isShow>
+  <div class="header">
+    <div class="head">
+      <h3>&boxbox; {{title}}</h3>
+      <fa-icon [icon]="headIcon" (click)="toggleModal()" class="closeIcon"></fa-icon>
+    </div>
+    <div class="border"></div>
+  </div>
+
+  <div class="inputModal">
+    <div class="containerInput">
+      <div *ngFor="let input of inputBoxs">
+        <input type="{{input.type}}" placeholder="{{input.placeholder}}" [(ngModel)]="input.bind"
+          class="{{input.class}}">
+        <br>
+        <span *ngIf="!input.isValid" class="errorTxt">{{input.errorTxt}}</span>
+      </div>
+      <div *ngFor="let btn of inputBtn">
+        <button type="{{btn.type}}" class="{{btn.class}}" (click)=btn.click(editProduct)>{{btn.title}}</button>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</div>
